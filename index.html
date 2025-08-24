@@ -16,7 +16,7 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop" />
   <meta property="og:locale" content="pt_BR" />
 
-  <!-- FAVICON (opcional) -->
+  <!-- FAVICON -->
   <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4bb.svg" />
 
   <!-- FONTS & ICONS -->
@@ -31,28 +31,20 @@
 
   <style>
     :root{
-      --bg:#0b1020;
-      --card:#0f162e;
-      --muted:#9fb0c9;
-      --text:#e9eefc;
-      --brand:#00bcd4;
-      --brand-2:#2ee6a6;
-      --danger:#ff4d6d;
-      --shadow:0 10px 30px rgba(0,0,0,.4);
-      --radius:18px;
-      --radius-sm:12px;
-      --glass:rgba(255,255,255,.08);
-      --border:1px solid rgba(255,255,255,.08);
+      --bg:#0b1020; --card:#0f162e; --muted:#9fb0c9; --text:#e9eefc;
+      --brand:#00bcd4; --brand-2:#2ee6a6; --danger:#ff4d6d;
+      --shadow:0 10px 30px rgba(0,0,0,.4); --radius:18px; --radius-sm:12px;
+      --glass:rgba(255,255,255,.08); --border:1px solid rgba(255,255,255,.08);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
-      margin:0;
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--text);
-      background: radial-gradient(1200px 800px at 80% -10%, rgba(0,188,212,.15), transparent 60%),
-                  radial-gradient(1200px 800px at 10% 110%, rgba(46,230,166,.12), transparent 60%),
-                  var(--bg);
+      background:
+        radial-gradient(1200px 800px at 80% -10%, rgba(0,188,212,.15), transparent 60%),
+        radial-gradient(1200px 800px at 10% 110%, rgba(46,230,166,.12), transparent 60%),
+        var(--bg);
       line-height:1.7;
     }
     a{color:inherit;text-decoration:none}
@@ -63,17 +55,10 @@
     /* HEADER */
     header{
       position:fixed;inset-inline:0;top:0;z-index:1000;
-      transition:all .35s ease;
-      background:transparent;
-      backdrop-filter:saturate(120%) blur(4px);
+      transition:all .35s ease; background:transparent; backdrop-filter:saturate(120%) blur(4px);
     }
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      padding:18px 0;
-    }
-    .brand{
-      display:flex;gap:.8rem;align-items:center;font-weight:800;font-size:1.2rem;
-    }
+    .nav{ display:flex;align-items:center;justify-content:space-between; padding:18px 0; }
+    .brand{ display:flex;gap:.8rem;align-items:center;font-weight:800;font-size:1.2rem; }
     .brand i{color:var(--brand)}
     nav ul{display:flex;gap:1.2rem;align-items:center;list-style:none}
     nav a{color:var(--muted);padding:.55rem .8rem;border-radius:10px;transition:.25s}
@@ -86,33 +71,19 @@
     .burger{display:none;font-size:1.3rem;color:var(--text);background:transparent;border:none}
 
     /* header scrolled */
-    .scrolled{
-      background:rgba(10,14,30,.75);
-      box-shadow:var(--shadow);
-    }
+    .scrolled{ background:rgba(10,14,30,.75); box-shadow:var(--shadow); }
 
     /* HERO */
-    .hero{
-      position:relative;min-height:95vh;display:grid;place-items:center;padding-top:80px;overflow:hidden
-    }
+    .hero{ position:relative;min-height:95vh;display:grid;place-items:center;padding-top:80px;overflow:hidden }
     .hero video,.hero .hero-bg{
       position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:contrast(1.05) saturate(1.05) brightness(.7)
     }
-    .hero::after{
-      content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,16,32,.1),#0b1020 85%);
-    }
-    .hero .content{
-      position:relative;z-index:2;text-align:center;max-width:880px;padding:1rem
-    }
-    .hero h1{
-      font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;margin:.7rem 0;font-weight:800
-    }
+    .hero::after{ content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,16,32,.1),#0b1020 85%); }
+    .hero .content{ position:relative;z-index:2;text-align:center;max-width:880px;padding:1rem }
+    .hero h1{ font-size:clamp(2rem,4vw,3.2rem);line-height:1.15;margin:.7rem 0;font-weight:800 }
     .hero p{color:#cfe3ff;font-size:1.05rem}
     .hero .actions{margin-top:1.2rem;display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;gap:.5rem;align-items:center;border-radius:12px;padding:.9rem 1.2rem;font-weight:700;border:var(--border);
-      background:var(--glass);color:var(--text)
-    }
+    .btn{ display:inline-flex;gap:.5rem;align-items:center;border-radius:12px;padding:.9rem 1.2rem;font-weight:700;border:var(--border); background:var(--glass);color:var(--text) }
     .btn:hover{background:rgba(255,255,255,.12)}
     .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#081020;border:none}
     .badges{margin-top:1rem;display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap}
@@ -133,31 +104,21 @@
     @media (max-width:900px){.grid.cols-3,.grid.cols-2{grid-template-columns:1fr}}
     .card{
       background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
-      border:var(--border);
-      border-radius:var(--radius);
-      padding:24px; box-shadow:var(--shadow)
+      border:var(--border); border-radius:var(--radius); padding:24px; box-shadow:var(--shadow)
     }
     .card:hover{transform:translateY(-2px)}
-    .card .icon{
-      width:54px;height:54px;border-radius:14px;display:grid;place-items:center;
-      background:linear-gradient(135deg,rgba(0,188,212,.25),rgba(46,230,166,.25));margin-bottom:.8rem
-    }
+    .card .icon{ width:54px;height:54px;border-radius:14px;display:grid;place-items:center;
+      background:linear-gradient(135deg,rgba(0,188,212,.25),rgba(46,230,166,.25));margin-bottom:.8rem }
 
     /* FEATURED STRIP */
-    .strip{
-      border:var(--border);border-radius:var(--radius);padding:24px;background:rgba(0,0,0,.2)
-    }
+    .strip{ border:var(--border);border-radius:var(--radius);padding:24px;background:rgba(0,0,0,.2) }
     .strip .items{display:flex;gap:22px;flex-wrap:wrap;align-items:center;justify-content:center}
     .strip .items img{height:34px;opacity:.9;filter:grayscale(100%);transition:.25s}
     .strip .items img:hover{filter:none;opacity:1}
 
     /* SWIPERS */
-    .swiper{
-      width:100%;
-    }
-    .swiper-slide{
-      height:auto
-    }
+    .swiper{ width:100%; }
+    .swiper-slide{ height:auto }
 
     /* PRICING */
     .pricing .plan{
@@ -168,34 +129,26 @@
     .badge{display:inline-block;background:rgba(46,230,166,.18);color:#8ff0cf;border:1px solid rgba(46,230,166,.35);padding:.25rem .6rem;border-radius:999px;font-size:.8rem;font-weight:800}
 
     /* CTA BAR */
-    .cta-bar{
-      display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;justify-content:center;padding:26px;border-radius:var(--radius);
-      background:linear-gradient(135deg,rgba(0,188,212,.2),rgba(46,230,166,.18))
-    }
+    .cta-bar{ display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center;justify-content:center;padding:26px;border-radius:var(--radius);
+      background:linear-gradient(135deg,rgba(0,188,212,.2),rgba(46,230,166,.18)) }
 
     /* STATS + CHART */
-    .stats{
-      display:grid;gap:18px;grid-template-columns:repeat(4,1fr)
-    }
+    .stats{ display:grid;gap:18px;grid-template-columns:repeat(4,1fr) }
     @media (max-width:900px){.stats{grid-template-columns:repeat(2,1fr)}}
-    .kpi{
-      padding:20px;border-radius:16px;background:rgba(255,255,255,.04);border:var(--border);text-align:center
-    }
+    .kpi{ padding:20px;border-radius:16px;background:rgba(255,255,255,.04);border:var(--border);text-align:center }
     .kpi .num{font-weight:900;font-size:1.8rem}
     .chart-wrap{background:rgba(255,255,255,.04);border:var(--border);border-radius:var(--radius);padding:20px}
 
     /* BLOG */
-    .post{
-      display:flex;flex-direction:column;gap:12px
-    }
+    .post{ display:flex;flex-direction:column;gap:12px }
     .post .thumb{height:180px;border-radius:14px;overflow:hidden}
     .post .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
     .post:hover .thumb img{transform:scale(1.05)}
+    .share{display:flex;gap:10px;align-items:center;margin-top:6px}
+    .share a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.06);border:var(--border)}
 
     /* FAQ */
-    details{
-      background:rgba(255,255,255,.04);border:var(--border);border-radius:14px;padding:16px
-    }
+    details{ background:rgba(255,255,255,.04);border:var(--border);border-radius:14px;padding:16px }
     details+details{margin-top:12px}
     summary{cursor:pointer;font-weight:700}
     details p{margin:.6rem 0 0;color:var(--muted)}
@@ -250,35 +203,43 @@
     }
   </style>
 </head>
-<body>
 
+<body>
   <!-- HEADER -->
   <header id="header">
     <div class="container nav">
       <a class="brand" href="#home" aria-label="Ir para o início">
         <i class="fa-solid fa-bolt"></i> BarbaraCaruso
       </a>
+
       <button class="burger" id="burger" aria-label="Abrir menu"><i class="fa-solid fa-bars"></i></button>
+
       <nav id="menu" aria-label="Menu principal">
         <ul>
           <li><a href="#services">Serviços</a></li>
           <li><a href="#solutions">Soluções</a></li>
           <li><a href="#portfolio">Portfólio</a></li>
           <li><a href="#insights">Insights</a></li>
+          <li><a href="#blog">Artigos</a></li><!-- NOVO: item Artigos clicável -->
           <li><a href="#pricing">Planos</a></li>
           <li><a href="#contact">Contato</a></li>
-          <li><button class="cta-btn" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})"><i class="fa-solid fa-paper-plane"></i>&nbsp;Solicitar Proposta</button></li>
+          <li>
+            <button class="cta-btn" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">
+              <i class="fa-solid fa-paper-plane"></i>&nbsp;Solicitar Proposta
+            </button>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
 
+  
   <!-- HERO -->
   <section class="hero" id="home" aria-label="Seção inicial">
-    <!-- Vídeo de fundo (troque a URL se quiser) -->
     <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200&auto=format&fit=crop">
       <source src="https://cdn.coverr.co/videos/coverr-data-center-4792/1080p.mp4" type="video/mp4"/>
     </video>
+
     <div class="content" data-aos="fade-up">
       <span class="pill"><i class="fa-solid fa-shield-halved"></i> SLA • 24/7 • ISO mindset</span>
       <h1>Suporte de TI completo para empresas — rápido, seguro e escalável.</h1>
@@ -378,6 +339,7 @@
               <p>Redução de 62% no tempo de atendimento usando scripts e integrações.</p>
             </div>
           </div>
+
           <div class="swiper-slide">
             <div class="card">
               <div style="border-radius:14px;overflow:hidden;height:240px;margin-bottom:12px">
@@ -387,6 +349,7 @@
               <p>Hardening + EDR com zero incidentes críticos em 12 meses.</p>
             </div>
           </div>
+
           <div class="swiper-slide">
             <div class="card">
               <div style="border-radius:14px;overflow:hidden;height:240px;margin-bottom:12px">
@@ -397,12 +360,13 @@
             </div>
           </div>
         </div>
+
         <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
 
-  <!-- ESTATÍSTICAS + GRÁFICO -->
+  <!-- ESTATÍSTICAS + GRÁFICO (ATUALIZA A CADA 5s) -->
   <section id="insights">
     <div class="container">
       <div class="section-header">
@@ -431,17 +395,20 @@
         <span class="pill"><i class="fa-solid fa-briefcase"></i> Portfólio</span>
         <h2>Implementações e entregas</h2>
       </div>
+
       <div class="grid cols-3">
         <div class="post card" data-aos="zoom-in">
           <div class="thumb"><img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop" alt="NOC e monitoramento"></div>
           <h3>NOC & Monitoramento</h3>
           <p class="muted">Painéis, alertas e runbooks para estabilidade 24/7.</p>
         </div>
+
         <div class="post card" data-aos="zoom-in" data-aos-delay="60">
           <div class="thumb"><img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?q=80&w=1200&auto=format&fit=crop" alt="Wi-Fi corporativo"></div>
           <h3>Wi-Fi Corporativo</h3>
           <p class="muted">Cobertura total, captive portal e segmentação.</p>
         </div>
+
         <div class="post card" data-aos="zoom-in" data-aos-delay="120">
           <div class="thumb"><img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop" alt="Backup 3-2-1"></div>
           <h3>Backup 3-2-1</h3>
@@ -451,7 +418,7 @@
     </div>
   </section>
 
-  <!-- DEPOIMENTOS (CARROSSEL) -->
+  <!-- DEPOIMENTOS -->
   <section id="testimonials">
     <div class="container">
       <div class="section-header center">
@@ -480,42 +447,68 @@
             </div>
           </div>
         </div>
+
         <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
 
-  <!-- BLOG / INSIGHTS -->
+  <!-- BLOG / ARTIGOS -->
   <section id="blog">
     <div class="container">
       <div class="section-header">
         <span class="pill"><i class="fa-solid fa-newspaper"></i> Blog</span>
         <h2>Conteúdos para sua empresa</h2>
       </div>
+
       <div class="grid cols-3">
         <article class="post card" data-aos="fade-up">
           <div class="thumb"><img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="Guia de LGPD"></div>
           <h3>LGPD na prática para PMEs</h3>
           <p class="muted">Checklist essencial para adequar processos e TI.</p>
           <a class="btn" href="#" aria-label="Ler artigo LGPD">Ler artigo</a>
+
+          <!-- Compartilhamento -->
+          <div class="share" aria-label="Compartilhar">
+            <a href="#" onclick="share('LinkedIn','LGPD na prática para PMEs');return false;" aria-label="Compartilhar no LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" onclick="share('Twitter','LGPD na prática para PMEs');return false;" aria-label="Compartilhar no X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" onclick="share('Facebook','LGPD na prática para PMEs');return false;" aria-label="Compartilhar no Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" onclick="share('WhatsApp','LGPD na prática para PMEs');return false;" aria-label="Compartilhar no WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
         </article>
+
         <article class="post card" data-aos="fade-up" data-aos-delay="60">
           <div class="thumb"><img src="https://images.unsplash.com/photo-1549924231-f129b911e442?q=80&w=1200&auto=format&fit=crop" alt="Zero Trust"></div>
           <h3>Zero Trust sem mistério</h3>
           <p class="muted">Primeiros passos para reduzir a superfície de ataque.</p>
           <a class="btn" href="#" aria-label="Ler artigo Zero Trust">Ler artigo</a>
+
+          <div class="share" aria-label="Compartilhar">
+            <a href="#" onclick="share('LinkedIn','Zero Trust sem mistério');return false;"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" onclick="share('Twitter','Zero Trust sem mistério');return false;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" onclick="share('Facebook','Zero Trust sem mistério');return false;"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" onclick="share('WhatsApp','Zero Trust sem mistério');return false;"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
         </article>
+
         <article class="post card" data-aos="fade-up" data-aos-delay="120">
           <div class="thumb"><img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1200&auto=format&fit=crop" alt="Custos de cloud"></div>
           <h3>Otimizando custos de cloud</h3>
           <p class="muted">Economia com rightsizing e reserva de instâncias.</p>
           <a class="btn" href="#" aria-label="Ler artigo custos cloud">Ler artigo</a>
+
+          <div class="share" aria-label="Compartilhar">
+            <a href="#" onclick="share('LinkedIn','Otimizando custos de cloud');return false;"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" onclick="share('Twitter','Otimizando custos de cloud');return false;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" onclick="share('Facebook','Otimizando custos de cloud');return false;"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" onclick="share('WhatsApp','Otimizando custos de cloud');return false;"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- PLANOS / PRICING -->
+  <!-- PLANOS -->
   <section id="pricing" class="pricing">
     <div class="container">
       <div class="section-header center">
@@ -582,6 +575,7 @@
         <span class="pill"><i class="fa-solid fa-circle-question"></i> Dúvidas</span>
         <h2>Perguntas frequentes</h2>
       </div>
+
       <details data-aos="fade-up"><summary>Atendem fora do horário comercial?</summary><p>Sim. Planos Business e Enterprise contam com on-call e NOC 24/7.</p></details>
       <details data-aos="fade-up"><summary>Como funcionam os SLAs?</summary><p>Definimos prioridades por severidade, com tempos de resposta e solução acordados em contrato.</p></details>
       <details data-aos="fade-up"><summary>Fazem atendimento on-site?</summary><p>Sim, cobrimos São Paulo e região. Outras localidades sob agenda.</p></details>
@@ -611,10 +605,12 @@
                 <input id="email" name="email" type="email" placeholder="voce@empresa.com" required />
               </div>
             </div>
+
             <div class="field">
               <label for="phone">Telefone/WhatsApp</label>
               <input id="phone" name="phone" type="tel" placeholder="(11) 99999-9999" />
             </div>
+
             <div class="field">
               <label for="plan">Plano de interesse</label>
               <select id="plan" name="plan">
@@ -624,13 +620,16 @@
                 <option>Enterprise</option>
               </select>
             </div>
+
             <div class="field">
               <label for="message">Como podemos ajudar?*</label>
               <textarea id="message" name="message" rows="5" placeholder="Descreva sua necessidade" required></textarea>
             </div>
+
             <div class="form-note">Ao enviar, você concorda com nossa política de privacidade.</div>
             <div class="success" id="successBox"><i class="fa-solid fa-circle-check"></i> Mensagem enviada com sucesso!</div>
             <div class="error" id="errorBox"><i class="fa-solid fa-triangle-exclamation"></i> Verifique os campos obrigatórios.</div>
+
             <button type="submit" class="cta-btn"><i class="fa-solid fa-paper-plane-top"></i> Enviar</button>
           </form>
         </div>
@@ -639,12 +638,8 @@
           <h3>Contatos</h3>
           <p class="muted">Rua Exemplo, 123 – São Paulo, SP<br/>Tel: (11) 99999-9999<br/>Email: contato@barbaracaruso.com.br</p>
           <div style="height:240px;border-radius:14px;overflow:hidden;margin-top:10px">
-            <iframe title="Mapa" width="100%" height="100%" style="border:0"
-              loading="lazy" allowfullscreen
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=Sao%20Paulo&output=embed"></iframe>
+            <iframe title="Mapa" width="100%" height="100%" style="border:0" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Sao%20Paulo&output=embed"></iframe>
           </div>
-
           <div style="margin-top:14px;display:flex;gap:10px">
             <a class="btn" href="https://wa.me/5511999999999" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
             <a class="btn" href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
@@ -698,6 +693,7 @@
           </ul>
         </div>
       </div>
+
       <div class="credits">© <span id="year"></span> BarbaraCaruso • Todos os direitos reservados.</div>
     </div>
   </footer>
@@ -707,7 +703,7 @@
   <button class="backtotop" id="backtotop" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></button>
   <button class="chat-toggle" id="chatToggle" aria-label="Abrir chat"><i class="fa-solid fa-message"></i></button>
 
-  <!-- CHAT FAKE -->
+  <!-- CHAT -->
   <div class="chat" id="chatBox" aria-live="polite">
     <header>
       <div class="head">
@@ -738,22 +734,29 @@
     const backToTop = document.getElementById('backtotop');
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 10);
-      if(window.scrollY > 500){ backToTop.classList.add('show'); } else { backToTop.classList.remove('show'); }
+      if(window.scrollY > 500){ backToTop.classList.add('show'); }
+      else { backToTop.classList.remove('show'); }
     });
     backToTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
 
-    // MOBILE MENU
+    // MOBILE MENU (corrigido: CSS inline com template string)
     const burger = document.getElementById('burger');
     const menu = document.getElementById('menu');
     burger?.addEventListener('click', ()=> menu.classList.toggle('open'));
-    // simples estilo inline pra mobile:
+
+    // CSS para menu mobile
     const css = document.createElement('style');
     css.textContent = `
       @media (max-width:900px){
-        #menu ul{position:fixed;top:64px;left:0;right:0;bottom:0;background:#0b1020;flex-direction:column;padding:22px;transform:translateY(-120%);transition:.25s}
+        #menu ul{
+          position:fixed;top:64px;left:0;right:0;bottom:0;background:#0b1020;
+          display:flex;flex-direction:column;gap:14px;align-items:flex-start;
+          padding:22px;transform:translateY(-120%);transition:.25s
+        }
         #menu.open ul{transform:translateY(0)}
         .burger{display:block}
         nav ul li{width:100%}
+        nav ul li a, nav ul li button{width:100%;text-align:left}
       }
     `;
     document.head.appendChild(css);
@@ -763,12 +766,14 @@
 
     // SWIPERS
     new Swiper('#solutions .swiper', {
-      slidesPerView:1, spaceBetween:20, loop:true, autoplay:{delay:3500},
+      slidesPerView:1, spaceBetween:20, loop:true,
+      autoplay:{delay:3500},
       pagination:{el:'#solutions .swiper-pagination', clickable:true},
       breakpoints:{768:{slidesPerView:2}, 1024:{slidesPerView:3}}
     });
     new Swiper('#testimonials .swiper', {
-      slidesPerView:1, spaceBetween:20, loop:true, autoplay:{delay:4200},
+      slidesPerView:1, spaceBetween:20, loop:true,
+      autoplay:{delay:4200},
       pagination:{el:'#testimonials .swiper-pagination', clickable:true}
     });
 
@@ -777,9 +782,9 @@
     const appear = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){
-          const el=e.target, target=parseFloat(el.dataset.count); let cur=0;
-          const isPercent = el.textContent.includes('%') || el.dataset.count.toString().includes('%');
-          const step = target/40;
+          const el=e.target, target=parseFloat(el.dataset.count);
+          let cur=0; const step = target/40;
+          const isPercent = el.dataset.count.toString().includes('%');
           const timer=setInterval(()=>{
             cur += step;
             if(cur>=target){ cur=target; clearInterval(timer); }
@@ -791,15 +796,24 @@
     },{threshold:.4});
     counters.forEach(c=>appear.observe(c));
 
-    // CHART
+    // ==== GRÁFICO DINÂMICO (ATUALIZA A CADA 5s) ====
     const ctx = document.getElementById('supportChart');
+
+    // Gera rótulos de tempo e dados iniciais
+    function timeLabel(){ const d=new Date(); return d.toTimeString().slice(0,8); }
+    const labels = Array.from({length:12}, (_,i)=> timeLabel());
+    const chamados = Array.from({length:12}, ()=> Math.floor(Math.random()*200)+800); // 800–1000
+    const sla = Array.from({length:12}, ()=> (98 + Math.random()*1.2).toFixed(1));   // 98.0–99.2
+
     const chart = new Chart(ctx, {
       type:'line',
       data:{
-        labels:['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+        labels,
         datasets:[
-          {label:'Chamados atendidos', data:[620,590,710,760,820,900,980,1000,990,1020,1100,1180], tension:.35, fill:true, borderColor:'#00bcd4', backgroundColor:'rgba(0,188,212,.18)'},
-          {label:'SLA cumprido (%)', data:[96,97,97.5,98,98.2,98.4,98.7,98.8,98.5,98.9,99,99.1], yAxisID:'y1', borderColor:'#2ee6a6', backgroundColor:'rgba(46,230,166,.12)', tension:.35}
+          {label:'Chamados atendidos', data:chamados, tension:.35, fill:true,
+           borderColor:'#00bcd4', backgroundColor:'rgba(0,188,212,.18)'},
+          {label:'SLA cumprido (%)', data:sla, yAxisID:'y1', borderColor:'#2ee6a6',
+           backgroundColor:'rgba(46,230,166,.12)', tension:.35}
         ]
       },
       options:{
@@ -813,28 +827,43 @@
       }
     });
 
-    // FORM VALIDATION (demo)
-    const contactForm = document.getElementById('contactForm');
-    const ok = document.getElementById('successBox');
-    const err = document.getElementById('errorBox');
+    // Atualiza a cada 5 segundos
+    setInterval(()=>{
+      // adiciona novo ponto e remove o mais antigo (janela deslizante)
+      chart.data.labels.push(timeLabel());
+      chart.data.labels.shift();
 
+      const novoChamado = Math.max(700, Math.min(1200, (chamados.at(-1) || 900) + Math.floor((Math.random()-0.5)*120)));
+      const novoSla = (98 + Math.random()*1.2).toFixed(1);
+
+      chart.data.datasets[0].data.push(novoChamado);
+      chart.data.datasets[0].data.shift();
+      chart.data.datasets[1].data.push(novoSla);
+      chart.data.datasets[1].data.shift();
+
+      chart.update();
+    }, 5000);
+    // ==== FIM GRÁFICO DINÂMICO ====
+
+    // CONTATO: helper
     function goContact(plan){
       document.querySelector('#contact').scrollIntoView({behavior:'smooth'});
       document.getElementById('plan').value = plan;
     }
+    window.goContact = goContact; // expõe para botões do HTML
 
+    // FORM VALIDATION (demo)
+    const contactForm = document.getElementById('contactForm');
+    const ok = document.getElementById('successBox');
+    const err = document.getElementById('errorBox');
     contactForm.addEventListener('submit', async (e)=>{
       e.preventDefault();
       ok.style.display='none'; err.style.display='none';
-
       const data = Object.fromEntries(new FormData(contactForm).entries());
       const required = ['name','email','message'];
       const valid = required.every(k => (data[k]||'').trim().length>2) && /^\S+@\S+\.\S+$/.test(data.email);
-
       if(!valid){ err.style.display='block'; return; }
-
-      // Envio simulado. Para integração real, use:
-      // await fetch('https://formspree.io/f/SEU_ID', { method:'POST', headers:{'Accept':'application/json'}, body:new FormData(contactForm) })
+      // Envio simulado. Para integrar, use seu endpoint/serviço preferido (Formspree, API, etc.)
       await new Promise(r=>setTimeout(r,600));
       ok.style.display='block';
       contactForm.reset();
@@ -844,7 +873,10 @@
     document.getElementById('newsletter').addEventListener('submit', (e)=>{
       e.preventDefault();
       const mail = document.getElementById('newsEmail');
-      if(!/^\S+@\S+\.\S+$/.test(mail.value)){ alert('Digite um email válido.'); return; }
+      if(!/^\S+@\S+\.\S+$/.test(mail.value)){
+        alert('Digite um email válido.');
+        return;
+      }
       document.getElementById('newsOk').style.display='block';
       mail.value='';
     });
@@ -862,18 +894,170 @@
     chatSend.addEventListener('click', ()=>{
       const msg = chatInput.value.trim();
       if(!msg) return;
-      const p = document.createElement('p'); p.textContent = "Você: " + msg; chatBody.appendChild(p);
+      const p = document.createElement('p');
+      p.textContent = "Você: " + msg;
+      chatBody.appendChild(p);
       chatInput.value='';
       setTimeout(()=>{
-        const r = document.createElement('p'); r.className='muted'; r.textContent = "Atendente: Recebido! Em instantes entraremos em contato 😉";
+        const r = document.createElement('p');
+        r.className='muted';
+        r.textContent = "Atendente: Recebido! Em instantes entraremos em contato 😉";
         chatBody.appendChild(r);
         chatBody.scrollTop = chatBody.scrollHeight;
       }, 700);
     });
 
-    // ACCESSIBILITY: close with ESC
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ chatBox.style.display='none'; menu.classList.remove('open'); } });
+    // ACCESSIBILITY: fechar com ESC
+    document.addEventListener('keydown', (e)=>{
+      if(e.key==='Escape'){ chatBox.style.display='none'; menu.classList.remove('open'); }
+    });
+
+    // COMPARTILHAMENTO (Artigos)
+    function share(network, title){
+      const url = location.href.split('#')[0]; // página atual
+      const text = encodeURIComponent(title + ' — por BarbaraCaruso');
+      const u = encodeURIComponent(url);
+      let link = '#';
+      switch(network){
+        case 'LinkedIn': link = `https://www.linkedin.com/sharing/share-offsite/?url=${u}`; break;
+        case 'Twitter':  link = `https://twitter.com/intent/tweet?text=${text}&url=${u}`; break;
+        case 'Facebook': link = `https://www.facebook.com/sharer/sharer.php?u=${u}`; break;
+        case 'WhatsApp': link = `https://wa.me/?text=${text}%20${u}`; break;
+      }
+      window.open(link, '_blank', 'noopener,noreferrer,width=700,height=560');
+    }
+    window.share = share;
   </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Menu burger
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('menu');
+  burger.addEventListener('click', () => {
+    menu.classList.toggle('open');
+  });
+
+  // Scroll suave
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+    });
+  });
+
+  // Header scroll
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 50) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+
+  // Back to top
+  const backToTop = document.getElementById('backtotop');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 300) backToTop.classList.add('show');
+    else backToTop.classList.remove('show');
+  });
+  backToTop.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+  // Initialize AOS
+  AOS.init({duration:800,once:true});
+
+  // Initialize Swiper
+  new Swiper('.swiper', {pagination:{el:'.swiper-pagination',clickable:true},loop:true,autoplay:{delay:4000}});
+
+  // Animate KPIs
+  const kpis = document.querySelectorAll('.num');
+  kpis.forEach(kpi => {
+    let count = 0;
+    const target = parseFloat(kpi.dataset.count);
+    const increment = target / 100;
+    const update = () => {
+      count += increment;
+      if(count < target){
+        kpi.textContent = kpi.dataset.count.includes('.') ? count.toFixed(1) : Math.floor(count);
+        requestAnimationFrame(update);
+      } else {
+        kpi.textContent = target;
+      }
+    };
+    update();
+  });
+
+  // Chart.js example
+  const ctx = document.getElementById('supportChart');
+  if(ctx){
+    new Chart(ctx,{
+      type:'line',
+      data:{
+        labels:['Jan','Feb','Mar','Apr','May','Jun'],
+        datasets:[{
+          label:'Tickets resolvidos',
+          data:[1200,1350,1280,1400,1500,1600],
+          borderColor:'rgba(0,188,212,0.8)',
+          backgroundColor:'rgba(0,188,212,0.2)',
+          fill:true,
+          tension:0.3
+        }]
+      },
+      options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}
+    });
+  }
+
+  // Form handling (demo)
+  const contactForm = document.getElementById('contactForm');
+  contactForm?.addEventListener('submit', e => {
+    e.preventDefault();
+    const success = document.getElementById('successBox');
+    const error = document.getElementById('errorBox');
+    if(contactForm.checkValidity()){
+      success.style.display='block';
+      error.style.display='none';
+      contactForm.reset();
+    } else {
+      success.style.display='none';
+      error.style.display='block';
+    }
+  });
+
+  const newsletter = document.getElementById('newsletter');
+  newsletter?.addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('newsOk').style.display='block';
+    newsletter.reset();
+  });
+
+  // Chat toggle
+  const chatToggle = document.getElementById('chatToggle');
+  const chatBox = document.getElementById('chatBox');
+  const chatClose = document.getElementById('chatClose');
+  chatToggle.addEventListener('click', () => chatBox.style.display='grid');
+  chatClose.addEventListener('click', () => chatBox.style.display='none');
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+});
+
+// Share function
+function share(platform, text){
+  let url = '';
+  const page = encodeURIComponent(location.href);
+  const content = encodeURIComponent(text);
+  switch(platform){
+    case 'LinkedIn': url = `https://www.linkedin.com/shareArticle?mini=true&url=${page}&title=${content}`; break;
+    case 'Twitter': url = `https://twitter.com/intent/tweet?text=${content}&url=${page}`; break;
+    case 'Facebook': url = `https://www.facebook.com/sharer/sharer.php?u=${page}`; break;
+    case 'WhatsApp': url = `https://api.whatsapp.com/send?text=${content}%20${page}`; break;
+  }
+  window.open(url,'_blank');
+}
+
+// Plano CTA
+function goContact(plan){
+  document.getElementById('plan').value = plan;
+  document.querySelector('#contact').scrollIntoView({behavior:'smooth'});
+}
+</script>
 
   <!-- JSON-LD SCHEMA -->
   <script type="application/ld+json">
@@ -884,7 +1068,12 @@
     "url": "https://exemplo.com",
     "logo": "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=600&auto=format&fit=crop",
     "telephone": "+55-11-99999-9999",
-    "address": { "@type": "PostalAddress", "addressLocality": "São Paulo", "addressRegion": "SP", "addressCountry": "BR" },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    },
     "sameAs": ["https://linkedin.com", "https://instagram.com"],
     "description": "Suporte de TI completo para empresas: help desk, redes, cloud, segurança e projetos.",
     "areaServed": "Brazil"
